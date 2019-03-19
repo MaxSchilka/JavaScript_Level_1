@@ -37,23 +37,25 @@
     alert("Задание 2\nответ x=1+(2x2)=5, но также выводится undefined");
     */
 //Задание 3
-/*
-        
+
+ /*       
     let a = ((Math.random() < 0.5) ? -1 : 1)*parseInt(Math.random() *100);
     let b = ((Math.random() < 0.5) ? -1 : 1)*parseInt(Math.random() *100);
     alert("a="+a+"\nb="+b);
     function ab(a, b){
+        console.log (a, b);
         if (a >= 0 && b >= 0){
-            alert(a-b+"\Случайные числа положительные. Поэтому выведенное число результат их разности");    
+            alert(a-b+"\nСлучайные числа положительные. Поэтому выведенное число результат их разности");    
         }else{
             if(a < 0 && b < 0){
-                alert(a*b+"\Случайные числа отрицательные. Поэтому выведенное число результат их произведения"); 
+                alert(a*b+"\nСлучайные числа отрицательные. Поэтому выведенное число результат их произведения"); 
             }else{
-                {alert(a+b+"\Случайные числа разных знаков. Поэтому выведенное число результат их суммы"); 
-                }
+                alert(a+b+"\nСлучайные числа разных знаков. Поэтому выведенное число результат их суммы"); 
             }
         }
     }
+    
+    alert(ab(a,b);
 
 */
 
@@ -68,7 +70,10 @@ function plus ( a, b ) { //Сложение
 function minus ( a, b ) { //Вычитание
     return a - b;
 }
-function del ( a, b ) { //Деление
+function del ( a, b ) {//Деление
+    if(b==0){
+        return -1;
+    }
     return a / b;
 }
 function multi ( a, b ) { //Умножение
@@ -82,16 +87,57 @@ function mathOperation ( arg1, arg2, operation ) {
     switch (operation) { 
         case '+': 
             return plus ( arg1, arg2 ); 
-            break; 
         case '-': 
             return minus ( arg1, arg2 ); 
-            break; 
         case '/': 
             return del ( arg1, arg2 ); 
-            break; 
         case '*': 
             return multi ( arg1, arg2 ); 
-            break; 
     } 
 } 
+*/
+
+//Задание 6
+/*
+let val = parseInt(prompt("Придумайте любое число"));
+let pow = parseInt(prompt("В какую степень выхотели бы возвести Ваше число?"));
+alert(val+" -Ваше число \n"+pow+" -Степень Вашего числа");
+function power (val, pow) {
+    console.log (val, pow);
+    if (pow > 1) {
+        return val * power(val, pow-1);
+    } else if (pow == 1) {
+        return val;
+    } else if (pow == 0) {
+        return 1;
+    } else {
+        return 1 / power (val, pow * -1);
+    }
+    
+}
+alert(power(val, pow));
+*/
+
+//Задание 7 Проверка пароля
+/*
+let path = prompt ("Введите пароль");
+function suitTheLength (path) {
+    return (path.length >= 3 && path.length <= 12);
+}
+
+function suitTheSymbol (path) {
+    return (path.includes ("&") || path.includes("$") || path.includes("%") ||);
+}
+function suitBeginningAndEnd(path){
+    return (path.startsWith("q") || path.endsWith ("z"));
+    };
+function checkPassword(path) {
+    if (suitTheLegend (path) && suitTheSymbol (path) && suitBeginningAndEnd(path)) {
+        alert ("Пароль корректный");
+    }else{
+        alert ("Пароль некорректный");
+    }
+    
+}
+checkPassword(path);
 */
