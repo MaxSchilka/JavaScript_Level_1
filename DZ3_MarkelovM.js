@@ -7,6 +7,7 @@ let a = [
  [{name: 'Adam', age: 56}, {name: 'Sara', age: 21}, {name: 'Don', age: 22}],
  [{name: 'Karl', age: 34}, {name: 'Marta', age: 76}, {name: 'John', age: 19}]
 ];
+
 ////Скопируйте	его	в	переменную	b	и	выведите	в	консоль.
                     
                     /////ВАРИАНТ 1 - неверный/////
@@ -45,7 +46,7 @@ for (let key in a) {
 let b = [...a];//зависимость остаётся
 */
                     /////ВАРИАНТ 7 - ПРАВИЛЬНЫЙ/////
-
+/*
 function createClone(a) {
     let b = []; // создаём пустой массив
     for (let prop in a) { //перебираем все свойства массива "а"
@@ -59,6 +60,28 @@ function createClone(a) {
     return b;
 }
 const b = createClone(a);
+*/
+
+                     /////ВАРИАНТ 8 - ПРАВИЛЬНЫЙ/////
+/*
+let b =[];
+for (let i = 0; i<a.length; i++) {
+    b[i] = [];
+    for(let j = 0; j<a[i].length; j++){
+        b[i][j] = Object.assign({}, a[i][j]);
+    }
+}
+*/
+
+                    /////ВАРИАНТ 9 - ПРАВИЛЬНЫЙ/////
+
+let b =[];
+a.forEach (function (item, index){
+    b[index] = [];
+    item.forEach (function (i, ind){
+        b[index][ind] = Object.assign({}, i);
+    })
+});
 
 
 //ДАЛЬШЕ ТЕСТ НА ЗАВИСИМОСТЬ
@@ -72,36 +95,3 @@ console.log(a);
 console.log(b);
 
 /*
-                    ////ЗАДАНИЕ 2////КОРЗИНА
-
-////Предположим, есть сущность корзины. Нужно реализовать функционал
-подсчета стоимости корзины в зависимости от находящихся в ней товаров.
-Товары в корзине хранятся в массиве. Задачи:
-a. Организовать такой массив для хранения товаров в корзине;
-b. Организовать функцию countBasketPrice, которая будет считать
-стоимость корзины////
-
-
-
-let headphones = [ //массив корзины
- [{name: 'Philips', model: 1, price: 200}, {name: 'Philips', model: 2, price: 300}, {name: 'Philips', model: 3, price: 400}],
- [{name: 'SONY', model: 1, price: 275}, {name: 'SONY', model: 2, price: 375}, {name: 'SONY', model: 3, price: 475}],
- [{name: 'Sehnheiser', model: 1, price: 325}, {name: 'Sehnheiser', model: 2, price: 425}, {name: 'Sehnheiser', model: 3, price: 525}]
-];
-console.log(headphones);
-
-for(price in headphones) {
-    console.log(headphones[price]);
-}
-    
-
-/*
-function countBasketPrice (headphones) {
-    let basketSum = 0;
-    for (i = 0; i<headphones.length; i++) {
-        basketSum = basketSum + headphones[price];
-    }
-    return basketSum;
-}
-console.log(basketSum);
-*/
