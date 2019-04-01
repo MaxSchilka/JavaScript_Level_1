@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
                     ////ЗАДАНИЕ 2////
 /*
@@ -25,6 +25,81 @@ let headphones = [
 
 console.log(headphones);
 
+let basket = {
+    goodlist: [],
+    countTotalPrice (prodlist){
+        let toatlPrice = 0;
+        prodlist.forEach (function (item) {
+            toatlPrice +=item.price;
+        });
+        return totalPrice;
+    },
+    
+    countTotalNumber(){
+        let sumCount = 0;
+        
+    },
+    
+    putProduct (prod, count) {
+        
+    }
+};
+
+for (let i = 0; i < headphones.length; i+=2) { //товары на чётной позиции
+    basket.putProduct(headphones[i], count: 1); //складываются один раз
+};
+
+for (let i = 1; i < headphones.length; i+=2) { //товары на нечётной позиции
+    basket.putProduct(headphones[i], count: 2); //складываются 2 разв
+};
+basket.countTotalNumber();
+basket.countTotalPrice();
+
+
+/*
+let basket = {
+    goodlist: [],
+    countTotalPrice(){
+        let totalPrice = 0;
+        for (let i=0; i<this.goodList.length; i++) {
+            totalPrice += this.goodList[i].count * this.goodlist[i].price;
+        }
+        console.log("ИТОГО: " + totalPrice)
+    },
+    
+    countTotalNumber(){
+        let sumCount = 0;
+        for (let i=0; i<this.goodlist.length; i++) {
+            sumCount += this.goodlist[i].count;
+        }
+        console.log ("Товаров в корзине: " + sumCount);
+    },
+    
+    putProduct (prod, count) {
+        let idx = this.goodlist.findIndex(function(elem) {
+            return elem.name === headphones.name;
+        });
+        if (idx === -1) {
+            this.goodlist.push(Object.assign({}, prod));
+            this.goodlist[this.goodList.length - 1].count = count;
+        } else {
+            this.goodlist[idx].count += count;
+        }
+    }
+};
+
+for (let i = 0; i < headphones.length; i+=2) { //товары на чётной позиции
+    basket.putProduct(headphones[i], count: 1); //складываются один раз
+};
+
+for (let i = 1; i < headphones.length; i+=2) { //товары на нечётной позиции
+    basket.putProduct(headphones[i], count: 2); //складываются 2 разв
+};
+basket.countTotalNumber();
+basket.countTotalPrice();
+
+
+/*
 function countBasketPrice(basketSum) {
     let totalPrice = 0;
     basketSum.forEach (function (item) {
@@ -38,3 +113,4 @@ let basket = {
     goodlist:
     
 }
+*/
