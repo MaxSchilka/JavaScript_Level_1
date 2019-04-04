@@ -1,4 +1,4 @@
-"use strict";
+"use strict"
 
                     ////ЗАДАНИЕ 2////
 /*
@@ -25,6 +25,34 @@ let headphones = [
 
 console.log(headphones);
 
+function sumAll (headphones) {
+    let sum = 0;
+    headphones.forEach (function (item) {
+        sum += item.price
+    });
+
+    return sum;
+}
+console.log(sumAll(headphones));
+
+let basket = {
+    goodList = {},
+    countTotalPrice (goodList) { //Общая стоимость того что в goodlist
+        
+    },
+        
+    countTotalNubmer (goodList) { //общее колчичество того что в goodlist
+        
+    },
+        
+    putProduct (i, count) { //функция для добавления товаров в goodlist
+        
+    }
+        
+    
+}
+
+/*
 let basket = {
     goodlist: [],
     countTotalPrice (prodlist){
