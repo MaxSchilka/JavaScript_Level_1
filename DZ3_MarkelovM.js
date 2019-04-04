@@ -13,7 +13,10 @@ let a = [
                     /////ВАРИАНТ 1 - неверный/////
 /*
 //let b = ObjectAssign([], a);
+
 */
+
+
                     /////ВАРИАНТ 2 - неверный/////
 /*
 let b = [];//зависимость остаётся
@@ -72,7 +75,7 @@ for (let i = 0; i<a.length; i++) {
     }
 }
 */
-
+/*
                     /////ВАРИАНТ 9 - ПРАВИЛЬНЫЙ/////
 
 let b =[];
@@ -82,7 +85,7 @@ a.forEach (function (item, index){
         b[index][ind] = Object.assign({}, i);
     })
 });
-
+*/
 
 //ДАЛЬШЕ ТЕСТ НА ЗАВИСИМОСТЬ
 a[0][0].name = "Jimmy";
@@ -94,4 +97,4 @@ b[0][1].age = 350;
 console.log(a);
 console.log(b);
 
-/*
+
