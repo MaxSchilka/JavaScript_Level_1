@@ -10,13 +10,20 @@ console.log(headphones);
 
 function sumAll (headphones) {
     let sum = 0;
-    headphones.forEach (function (item) {
-        sum += item.price
+    headphones.forEach (function(item) {
+        sum +=item.price; 
     });
     return sum;
 }
-console.log(sumAll(headphones)); //до сюда работает
+console.log(sumAll(headphones));
 
+for (i=0; i<headphones.length; i += 2) {
+    basket.putProduct(headphones[i], count: 1);
+};
+
+for (i=1; i<headphones.length; i+=2) {
+    basket.putProduct(headphones[i], count: 2);
+};
 
 let basket = {
     goodList = {},
@@ -35,6 +42,7 @@ let basket = {
     
 }
 
+/*
 for (i = 0; i < headphones.length; i += 2) {
     basket.putProduct (headphones[i], count 1);
 };
@@ -42,3 +50,13 @@ for (i = 0; i < headphones.length; i += 2) {
 for (i=1; i<headphones.length; i +=2) {
     basket.putProduct (headphones[i], count:2);
 };
+
+function sumAll (headphones) {
+    let sum = 0;
+    headphones.forEach (function (item) {
+        sum += item.price
+    });
+    return sum;
+}
+console.log(sumAll(headphones)); //до сюда работает
+*/
